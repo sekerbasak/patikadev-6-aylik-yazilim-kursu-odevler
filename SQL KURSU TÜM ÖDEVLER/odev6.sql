@@ -1,0 +1,4 @@
+--select AVG(rental_rate) from film;
+--SELECT count(*) film  from film where title like 'C%';
+--select MAX(length) from film where rental_rate=0.99;
+--select distinct count(replacement_cost) from film where length>150
