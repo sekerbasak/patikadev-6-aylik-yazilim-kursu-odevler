@@ -1,0 +1,13 @@
+.bg-yellow{
+    background-color: #ffc017;
+}
+.border-bottom-dark{
+    border-bottom: 1px solid rgba(41, 41, 41, 1);
+}
+body{
+    font-family: 'PT Serif', serif;
+}
+.img-circle-size{
+    width: 300px;
+    height: 300px;
+}
