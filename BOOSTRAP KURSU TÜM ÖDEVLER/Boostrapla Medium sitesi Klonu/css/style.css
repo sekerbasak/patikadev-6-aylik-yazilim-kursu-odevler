@@ -11,3 +11,10 @@ body{
     width: 300px;
     height: 300px;
 }
+.img-small-size{
+    width: 25px;
+    height: 25px;
+}
+.aside-buttons >li{
+    margin-bottom: 10px;
+}
