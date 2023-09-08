@@ -84,7 +84,7 @@ let value;
 // link.className="btn btn-dark btn-sm ms-3";
 // link.href="www.google.com";
 // link.innerHTML="go to Google";
-// const cardBody=document.querySelectorAll(".card-body")[1];
+ const cardBody=document.querySelectorAll(".card-body")[1];
 // cardBody.appendChild(link);//çocuğu ekleme yapar
 // console.log(link);
 
@@ -106,10 +106,19 @@ let value;
 // todoList.appendChild(todo5);
 
 ////!Element Silmek
-//direkt silme
-todo[0].remove();
-todo[todo.length-1].remove();
-console.log(todo);
-//anneden ulaşarak silme
-todoList.removeChild(todo[0]);
+// //direkt silme
+// todo[0].remove();
+// todo[todo.length-1].remove();
+// console.log(todo);
+// //anneden ulaşarak silme
+// todoList.removeChild(todo[0]);
+
+////!element yer değiştirme
+
+const h2Element=document.createElement("h2");
+h2Element.className="card-title";
+h2Element.textContent="Todo Listesi-New";
+
+cardBody.replaceChild(h2Element,cardBody.childNodes[1]);
+
 
