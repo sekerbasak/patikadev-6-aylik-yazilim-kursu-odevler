@@ -1,0 +1,11 @@
+h3{
+    text-align: center;
+}
+.main{
+    background-color: rgb(247, 185, 163);
+    width: 500px;
+    height: 200px;
+    margin: 0 auto;
+    padding: 5px;
+    
+}
