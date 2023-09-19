@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@1,600&family=Inter:wght@700&family=PT+Serif:ital,wght@0,400;0,700;1,400&family=Source+Code+Pro:ital,wght@1,700&display=swap');
+*{
+    box-sizing: border-box;
+}
+body{
+  
+   
+    color: beige;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+}
+.container{
+ 
+    display: flex;
+    width: 90vw;
+}
+.panel{
+    background-size: auto 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 80vh;
+    border-radius: 50px;
+    cursor: pointer;
+    flex: 0.5;
+    margin: 10px;
+    position: relative;
+    transition: flex 0.7s ease-in;
+}
+.panel h3{
+    font-size: 24px;
+    position: absolute;
+    bottom: 20px;
+    left:50%;
+    margin: 0px;
+    opacity: 0;
+    font-family: 'EB Garamond', serif;
+    font-family: 'Inter', sans-serif;
+    font-family: 'PT Serif', serif;
+
+}
+.panel.active h3{
+    text-decoration: underline;
+    opacity: 1;
+    transition:opacity 0.3s ease-in 0.4s;
+
+}
+.panel.active {
+    flex: 5;
+}
+
+
+@media(max-width:600px){
+    .container{
+        width: 100vw;
+    }
+    .panel:nth-of-type(4),
+    .panel:nth-of-type(5){
+        display: none;
+    }
+}
+
+
+
