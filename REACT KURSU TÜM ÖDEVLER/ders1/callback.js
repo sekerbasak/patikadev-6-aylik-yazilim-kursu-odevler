@@ -11,7 +11,9 @@
 // }
 //  bye(()=>console.log("bye dostum benden bu kadar"));
 
+import axios from "axios";
 import fetch from "node-fetch";
+
 
 // fetch("https://jsonplaceholder.typicode.com/albums/1")
 //     .then((data) => data.json())
@@ -30,11 +32,33 @@ import fetch from "node-fetch";
 //             });
 //     });
 
-async function getData(url, url2) {
-    const users = await (await fetch(url)).json()
-    console.log(`Kullanıcılar:${users}`);
-    const post = await (await fetch(url2)).json()
-    console.log(`Postlar:${post}`);
+// async function getData(url, url2) {
+//     const users = await (await fetch(url)).json()
+//     console.log(`Kullanıcılar:${users}`);
+//     const post = await (await fetch(url2)).json()
+//     console.log(`Postlar:${post}`);
 
-}
-getData("https://jsonplaceholder.typicode.com/users/2", "https://jsonplaceholder.typicode.com/posts/2")
+// }
+//  getData("https://jsonplaceholder.typicode.com/users/2", "https://jsonplaceholder.typicode.com/posts/2")
+
+
+// import fetch from "axios";
+// import axios from "axios";
+// async function getData(url, url2) {
+//     const users = await axios(await fetch(url))
+//     console.log(`Kullanıcılar:${users}`);
+//     const post = await axios (await fetch(url2))
+//     console.log(`Postlar:${post}`);
+
+// }
+
+
+
+
+const getComments=(number)=>{
+return new Promise(async(resolve,reject)=>{
+ const {data}=await axios("https://jsonplaceholder.typicode.com/comments/2");
+ resolve(data)
+});
+};
+getComments(2).then((data)=> console.log(data)).catch((err)=>console.log(err))
