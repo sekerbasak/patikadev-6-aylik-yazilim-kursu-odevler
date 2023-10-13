@@ -1,0 +1,49 @@
+Fonksiyon: Motor
+-----------------------------------------
+	/* Başlangıçta false */calisiyor = false;
+	/*
+        /*çoklu satır
+        /*çoklu satır
+
+Fonksiyon: Motor
+-----------------------------------------
+	/* Başlangıçta false */calisiyor = false;
+	/*
+        /*çoklu satır
+        /*çoklu satır
+
+Fonksiyon: void
+-----------------------------------------
+	/* Başlangıçta false */calisiyor = false;
+	/*
+        /*çoklu satır
+        /*çoklu satır
+
+Fonksiyon: void
+-----------------------------------------
+	/* Başlangıçta false */calisiyor = false;
+	/*
+        /*çoklu satır
+        /*çoklu satır
+
+Fonksiyon: String
+-----------------------------------------
+	/* Başlangıçta false */calisiyor = false;
+	/*
+        /*çoklu satır
+        /*çoklu satır
+
+Fonksiyon: String
+-----------------------------------------
+	/* Başlangıçta false */calisiyor = false;
+	/*
+        /*çoklu satır
+        /*çoklu satır
+
+Fonksiyon: void
+-----------------------------------------
+	/* Başlangıçta false */calisiyor = false;
+	/*
+        /*çoklu satır
+        /*çoklu satır
+

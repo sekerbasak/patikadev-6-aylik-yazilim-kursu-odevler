@@ -1,0 +1,140 @@
+Fonksiyon: Motor
+-----------------------------------------
+	/**
+	* Varsayılan kurucu fonksiyon
+	/**
+	* 
+	* @param motorNo UUID olarak motor id
+	* @return motor instance
+	* Varolan bir motor no ile oluşturuluyor.
+	/**
+	* calisiyor true yapılıyor
+	/**
+	* Motorun durdurulması //
+         * 
+         * 
+        /**
+         * 
+         * 
+         * 
+
+Fonksiyon: Motor
+-----------------------------------------
+	/**
+	* Varsayılan kurucu fonksiyon
+	/**
+	* 
+	* @param motorNo UUID olarak motor id
+	* @return motor instance
+	* Varolan bir motor no ile oluşturuluyor.
+	/**
+	* calisiyor true yapılıyor
+	/**
+	* Motorun durdurulması //
+         * 
+         * 
+        /**
+         * 
+         * 
+         * 
+
+Fonksiyon: void
+-----------------------------------------
+	/**
+	* Varsayılan kurucu fonksiyon
+	/**
+	* 
+	* @param motorNo UUID olarak motor id
+	* @return motor instance
+	* Varolan bir motor no ile oluşturuluyor.
+	/**
+	* calisiyor true yapılıyor
+	/**
+	* Motorun durdurulması //
+         * 
+         * 
+        /**
+         * 
+         * 
+         * 
+
+Fonksiyon: void
+-----------------------------------------
+	/**
+	* Varsayılan kurucu fonksiyon
+	/**
+	* 
+	* @param motorNo UUID olarak motor id
+	* @return motor instance
+	* Varolan bir motor no ile oluşturuluyor.
+	/**
+	* calisiyor true yapılıyor
+	/**
+	* Motorun durdurulması //
+         * 
+         * 
+        /**
+         * 
+         * 
+         * 
+
+Fonksiyon: String
+-----------------------------------------
+	/**
+	* Varsayılan kurucu fonksiyon
+	/**
+	* 
+	* @param motorNo UUID olarak motor id
+	* @return motor instance
+	* Varolan bir motor no ile oluşturuluyor.
+	/**
+	* calisiyor true yapılıyor
+	/**
+	* Motorun durdurulması //
+         * 
+         * 
+        /**
+         * 
+         * 
+         * 
+
+Fonksiyon: String
+-----------------------------------------
+	/**
+	* Varsayılan kurucu fonksiyon
+	/**
+	* 
+	* @param motorNo UUID olarak motor id
+	* @return motor instance
+	* Varolan bir motor no ile oluşturuluyor.
+	/**
+	* calisiyor true yapılıyor
+	/**
+	* Motorun durdurulması //
+         * 
+         * 
+        /**
+         * 
+         * 
+         * 
+
+Fonksiyon: void
+-----------------------------------------
+	/**
+	* Varsayılan kurucu fonksiyon
+	/**
+	* 
+	* @param motorNo UUID olarak motor id
+	* @return motor instance
+	* Varolan bir motor no ile oluşturuluyor.
+	/**
+	* calisiyor true yapılıyor
+	/**
+	* Motorun durdurulması //
+         * 
+         * 
+        /**
+         * 
+         * 
+         * 
+

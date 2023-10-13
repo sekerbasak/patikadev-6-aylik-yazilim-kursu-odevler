@@ -1,0 +1,9 @@
+/**
+ * 
+ */
+/**
+ * @author ABC
+ *
+ */
+module encapsulationTest {
+}

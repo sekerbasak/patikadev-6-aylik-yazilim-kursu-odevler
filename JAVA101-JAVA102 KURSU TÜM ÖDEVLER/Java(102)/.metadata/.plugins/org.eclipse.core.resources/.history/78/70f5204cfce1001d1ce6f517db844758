@@ -1,0 +1,155 @@
+package odev1_deneme2;
+import java.io.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+public class ana_class 
+{
+
+	public static void main(String[] args) {
+		 boolean inComment = true;
+         boolean inJavadoc = true;
+		    Scanner input=new Scanner(System.in);
+	        String filename =input.next();
+	        List<String> functions = new ArrayList<String>();//liste nesnesi oluşturduk fonksiyonlar burda tutulacak
+	        
+	        try (BufferedReader reader = new BufferedReader(new FileReader(filename))) //dosyadan verileri okumak için bufferreader ve filereader nesnesi oluşturduk
+	        {
+	            String line;
+	            while ((line = reader.readLine()) != null)//son satıra gelinceye kadar dönsün
+	            {
+	                if (line.matches("^\\s*(public||private)\\s+\\w+\\s+\\w+\\s*\\(.*\\)\\s*\\{.*"))//dosyada public veya private ile başlayan bir ifade görürse
+	                {
+	                    String functionName = line.split("\\(")[0].split("\\s+")[2]; //fonksiyonun adını tutuyoruz
+	                    functions.add(functionName);//fonksiyonları listede tutuk
+	                }
+	            }
+	        } catch (IOException e) {
+	            e.printStackTrace();
+	            System.exit(1);
+	        }
+	        try (BufferedWriter javadocWriter = new BufferedWriter(new FileWriter("javadoc.txt"));   //yorum satırlatrı için dosyaları oluşturduk
+	             BufferedWriter singleLineWriter = new BufferedWriter(new FileWriter("teksatir.txt"));
+	             BufferedWriter multiLineWriter = new BufferedWriter(new FileWriter("coksatir.txt"))) 
+	        {
+	            for (String function : functions) {// öncesinde oluşturduğumuz listte dönsün
+	                 inComment = false;
+	                 inJavadoc = false; //javadoc bool
+	                int singleLineCommentCount = 0;      //yorum sayaçları
+	                int multiLineCommentCount = 0;
+	                int javadocCommentCount = 0;
+	                try (BufferedReader reader = new BufferedReader(new FileReader(filename))) //tekrardan dosyada dolanıyoruz
+	                {
+	                    String line;
+	                    while ((line = reader.readLine()) != null) { //dosyanın sonuna gelene kadar dön
+	                        if (line.matches("^\\s*\\*\\s*@param.*") || line.matches("^\\s*\\*\\s*@return.*")) //javadoc yorum türü1
+	                        {
+	                            inJavadoc = true;
+	                            javadocCommentCount++;
+	                        } else if (line.matches("^\\s*\\*\\s+.*")) { //javadoc yorum türü2
+	                            inJavadoc = true;
+	                            javadocCommentCount++;
+	                        } else if (line.matches("^\\s*/\\*\\*.*")) { //javadoc yorum türü3
+	                            inJavadoc = true;
+	                            javadocCommentCount++;
+	                        } else if (line.matches("^\\s*\\*\\/.*")) { //jvadoc bitti bool=false
+	                            inJavadoc = false;
+	                        } else if (line.matches("^\\s*\\/\\/.*")) { //tekli yorum kontrolü
+	                            if (inComment || inJavadoc) {
+	                                singleLineCommentCount++;
+	                            } else {
+	                                inComment = true;
+	                                singleLineCommentCount++;
+	                            }
+	                        } else if (line.matches("^\\s*\\/\\*.*")) {//çoklu yorum kontrolü
+	                            if (inComment || inJavadoc) {
+	                                multiLineCommentCount++;
+	                            } else {
+	                                inComment = true;
+	                                multiLineCommentCount++;
+	                            }
+	                        } else if (line.matches("^\\s*\\*\\/.*")) {
+	                            inComment = false;
+	                            multiLineCommentCount++;
+	                        } else if (line.matches("^\\s*public\\s+\\w+\\s+" + function + "\\s*\\(.*\\)\\s*\\{.*")) {
+	                            break;
+	                        }
+	                    }
+	                } catch (IOException e) {
+	                    e.printStackTrace();
+	                    System.exit(1);
+	                }
+	                System.out.println("Fonksiyon: " + function);
+	                System.out.println("Tek satır yorum sayisi: " +singleLineCommentCount);
+	                System.out.println("Çok satır yorum sayisi:  "+ multiLineCommentCount);
+	                System.out.println("Javadoc yorum sayisi: "+javadocCommentCount);
+	                System.out.println("-------------------------------------");
+	                // Dosyalara yorumları yazdırma
+	                javadocWriter.write("Fonksiyon: " + function + "\n");
+	                javadocWriter.write("-----------------------------------------\n");
+
+	                singleLineWriter.write("Fonksiyon: " + function + "\n");
+	                singleLineWriter.write("-----------------------------------------\n");
+
+	                multiLineWriter.write("Fonksiyon: " + function + "\n");
+	                multiLineWriter.write("-----------------------------------------\n");
+
+	                 inComment = false;
+	                 inJavadoc = false;
+	                try (BufferedReader reader = new BufferedReader(new FileReader(filename))) {
+	                    String line;
+	                    while ((line = reader.readLine()) != null) {
+	                        if (line.matches("^\\s*\\*\\s*@param.*") || line.matches("^\\s*\\*\\s*@return.*")) {
+	                            inJavadoc = true;
+	                            javadocWriter.write(line + "\n");
+	                        } else if (line.matches("^\\s*\\*\\s+.*")) {
+	                            if (!inJavadoc) {
+	                                inJavadoc = true;
+	                                javadocWriter.write(line + "\n");
+	                            } else {
+	                                javadocWriter.write(line + "\n");
+	                            }
+	                        } else if (line.matches("^\\s*/\\*\\*.*")) {
+	                            inJavadoc = true;
+	                            javadocWriter.write(line + "\n");
+	                        } else if (line.matches("^\\s*\\*\\/.*")) {
+	                            inJavadoc = false;
+	                        } else if (line.matches("^\\s*\\/\\/.*")) {
+	                            if (inComment || inJavadoc) {
+	                                singleLineWriter.write(line + "\n");
+	                            } else {
+	                                inComment = true;
+	                                singleLineWriter.write(line + "\n");
+	                            }
+	                        } else if (line.matches("^\\s*\\/\\*.*")) {
+	                            if (inComment || inJavadoc) {
+	                                multiLineWriter.write(line + "\n");
+	                            } else {
+	                                inComment = true;
+	                                multiLineWriter.write(line + "\n");
+	                            }
+	                        } else if (line.matches("^\\s*\\*\\/.*")) {
+	                            inComment = false;
+	                            multiLineWriter.write(line + "\n");
+	                        } else if (line.matches("^\\s*public\\s+\\w+\\s+" + function + "\\s*\\(.*\\)\\s*\\{.*")) {
+	                            break;
+	                        }
+	                    }
+	                } catch (IOException e) {
+	                    e.printStackTrace();
+	                    System.exit(1);
+	                }
+	                javadocWriter.write("\n");
+	                singleLineWriter.write("\n");
+	                multiLineWriter.write("\n");
+	            }
+	        } catch (IOException e) {
+	            e.printStackTrace();
+	            System.exit(1);
+	        }
+	    }
+	                
+	            
+	          
+}

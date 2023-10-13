@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename compilation unit &apos;odev1_son_deneme.main.java&apos; to &apos;ana.java&apos;&#x0D;&#x0A;- Original project: &apos;odev1_son_deneme&apos;&#x0D;&#x0A;- Original element: &apos;odev1_son_deneme.main.java&apos;&#x0D;&#x0A;- Renamed element: &apos;odev1_son_deneme.ana.java&apos;" description="Rename compilation unit &apos;main.java&apos;" flags="2" id="org.eclipse.jdt.ui.rename.compilationunit" input="/src&lt;odev1_son_deneme{main.java" name="ana.java" references="false" stamp="1681128323469" version="1.0"/>
+</session>

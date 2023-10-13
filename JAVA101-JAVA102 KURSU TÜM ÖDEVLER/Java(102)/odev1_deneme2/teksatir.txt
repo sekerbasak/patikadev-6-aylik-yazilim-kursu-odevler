@@ -1,0 +1,49 @@
+Fonksiyon: Motor
+-----------------------------------------
+	// motor no getir
+	// durum belirlenmesi //
+        //tek satır 
+      //tek satır 
+
+Fonksiyon: Motor
+-----------------------------------------
+	// motor no getir
+	// durum belirlenmesi //
+        //tek satır 
+      //tek satır 
+
+Fonksiyon: void
+-----------------------------------------
+	// motor no getir
+	// durum belirlenmesi //
+        //tek satır 
+      //tek satır 
+
+Fonksiyon: void
+-----------------------------------------
+	// motor no getir
+	// durum belirlenmesi //
+        //tek satır 
+      //tek satır 
+
+Fonksiyon: String
+-----------------------------------------
+	// motor no getir
+	// durum belirlenmesi //
+        //tek satır 
+      //tek satır 
+
+Fonksiyon: String
+-----------------------------------------
+	// motor no getir
+	// durum belirlenmesi //
+        //tek satır 
+      //tek satır 
+
+Fonksiyon: void
+-----------------------------------------
+	// motor no getir
+	// durum belirlenmesi //
+        //tek satır 
+      //tek satır 
+
